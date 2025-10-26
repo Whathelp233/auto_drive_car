@@ -13,7 +13,10 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'),
-         glob(os.path.join('launch', '*launch.[pxy][yma]*')))
+         glob(os.path.join('launch', '*launch.[pxy][yma]*'))),
+        # install picture assets so runtime can find them via get_package_share_directory
+        (os.path.join('share', package_name, 'picture'),
+         glob(os.path.join('picture', '*.png')))
     ],
     install_requires=['setuptools'],
     zip_safe=True,

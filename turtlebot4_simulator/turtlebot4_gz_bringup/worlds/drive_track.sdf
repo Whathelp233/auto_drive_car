@@ -46,7 +46,7 @@
           <geometry>
             <!-- Collision mesh -->
             <mesh>
-              <uri>/data/auto_driver_car/src/auto_drive_car/auto_drive/world/field1.dae</uri>
+              <uri>/root/ros2_jazzy_ws/src/auto_drive_car/auto_drive/world/field1.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -54,7 +54,7 @@
           <geometry>
             <!-- Visual mesh -->
             <mesh>
-              <uri>/data/auto_driver_car/src/auto_drive_car/auto_drive/world/field1.dae</uri>
+              <uri>/root/ros2_jazzy_ws/src/auto_drive_car/auto_drive/world/field1.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -62,14 +62,17 @@
     </model>
 
     <model name="stop_sign">
-      <pose>0 0 0 0 0 0</pose>
+      <!-- place the stop sign in front of the robot (x forward, y left, z up).
+           Adjust these coordinates if your robot spawns at a different origin. -->
+      <pose>0 4.0 0.3 0 1.5708 3.14</pose>
       <static>true</static>
       <link name="field_link">
         <collision name="collision">
           <geometry>
             <!-- Collision mesh -->
             <mesh>
-              <uri>/data/auto_driver_car/src/auto_drive_car/auto_drive/world/field1.dae</uri>
+              <!-- use the stop mesh for collision too (was field1.dae) -->
+              <uri>/root/ros2_jazzy_ws/src/auto_drive_car/auto_drive/world/stop.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -77,7 +80,7 @@
           <geometry>
             <!-- Visual mesh -->
             <mesh>
-              <uri>/data/auto_driver_car/src/auto_drive_car/auto_drive/world/stop.dae</uri>
+              <uri>/root/ros2_jazzy_ws/src/auto_drive_car/auto_drive/world/stop.dae</uri>
             </mesh>
           </geometry>
         </visual>
